@@ -7,9 +7,18 @@ import databricks.sql
 import requests
 import pandas as pd
 from tenacity import retry, stop_after_attempt, wait_exponential
-
-class DBXSQLWarehouse:
+from ..base import VannaBase
+from ..exceptions import DependencyError
+class DBXSQLWarehouse(VannaBase):
     def __init__(self, server_hostname, http_path, access_token):
+        try:
+            import databricks.sql
+        except ImportError:
+            raise DependencyError(
+                "You need to install required dependencies to execute this method, run command:"
+                " \npip install databricks-sql-connector"
+            )
+        
         self.server_hostname = server_hostname
         self.http_path = http_path
         self.access_token = access_token
