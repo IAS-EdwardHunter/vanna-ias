@@ -18,7 +18,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
-    "requests", "tenacity", "tabulate", "plotly", "pandas", "sqlparse", "kaleido", "flask", "flask-sock", "flasgger", "sqlalchemy", "databricks-sql-connector[pyarrow]","databricks-sdk
+    "requests", "tenacity", "tabulate", "plotly", "pandas", "sqlparse", "kaleido", "flask", "flask-sock", "flasgger", "sqlalchemy", "databricks-sql-connector[pyarrow]","databricks-sdk"
 ]
 
 [project.urls]
