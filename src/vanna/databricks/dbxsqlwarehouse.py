@@ -3,12 +3,12 @@ This manages a connection to a Databricks SQL endpoint,
 and via the warehouse, a query interface for SQL.
 """
 
-import databricks.sql
+
 import requests
 import pandas as pd
 from tenacity import retry, stop_after_attempt, wait_exponential
-from ..base import VannaBase
 from ..exceptions import DependencyError
+from ..base import VannaBase
 class DBXSQLWarehouse(VannaBase):
     def __init__(self, server_hostname, http_path, access_token):
         try:
